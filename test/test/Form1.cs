@@ -147,6 +147,10 @@ namespace test
             MysqlConnection mysqlConnection = new MysqlConnection();
             mysqlConnection.Connection();
             mysqlConnection.SelectOne();
+            InsertOk insert = new InsertOk();
+            insert.Owner = this;
+            insert.ShowDialog();
+            
         }
     }
 }

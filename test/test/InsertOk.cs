@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Extensometer_with_openCV
 {
-    public partial class Form1 : Form
+    public partial class InsertOk : Form
     {
-        public Form1()
+        public InsertOk()
         {
             InitializeComponent();
         }
@@ -30,6 +30,11 @@ namespace Extensometer_with_openCV
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
