@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// 사용 중인 모든 리소스를 정리합니다.
         /// </summary>
@@ -35,7 +36,7 @@
             // 
             // pictureBoxIpl1
             // 
-            this.pictureBoxIpl1.Location = new System.Drawing.Point(76, 142);
+            this.pictureBoxIpl1.Location = new System.Drawing.Point(77, 105);
             this.pictureBoxIpl1.Name = "pictureBoxIpl1";
             this.pictureBoxIpl1.Size = new System.Drawing.Size(653, 296);
             this.pictureBoxIpl1.TabIndex = 0;
