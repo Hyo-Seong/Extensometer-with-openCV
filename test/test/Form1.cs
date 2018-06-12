@@ -103,17 +103,20 @@ namespace test
                     y1 = found[0].Y;
                     x2 = found[0].X + found[0].Width;
                     y2 = found[0].Y + found[0].Height;
-
+                    /*
                     var json = new JObject();
                     json.Add("x1", x1);
                     json.Add("y1", y1);
                     json.Add("x2", x2);
                     json.Add("y2", y2);
-
+                    */
                     //Console.WriteLine(json.ToString());
-                    using (StreamWriter wr = new StreamWriter(@"C:\opencv_data\data.json"))
+                    using (StreamWriter wr = new StreamWriter(@"C:\opencv_data\data.txt"))
                     {
-                        wr.WriteLine(json);
+                        wr.WriteLine(x1);
+                        wr.WriteLine(y1);
+                        wr.WriteLine(x2);
+                        wr.WriteLine(y2);
                     }
                 }
 
@@ -144,13 +147,22 @@ namespace test
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             MysqlConnection mysqlConnection = new MysqlConnection();
             mysqlConnection.Connection();
             mysqlConnection.SelectOne();
-            InsertOk insert = new InsertOk();
-            insert.Owner = this;
-            insert.ShowDialog();
-            
+            */
+            Personal_Statistics ps = new Personal_Statistics();
+            ps.Owner = this;
+            ps.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RankerList rank = new RankerList();
+            rank.Owner = this ;
+            rank.ShowDialog();
         }
     }
 }

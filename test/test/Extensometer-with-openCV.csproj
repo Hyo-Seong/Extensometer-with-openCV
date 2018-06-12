@@ -103,9 +103,21 @@
       <DependentUpon>InsertYourName1.cs</DependentUpon>
     </Compile>
     <Compile Include="mysqlConnection.cs" />
+    <Compile Include="Personal_Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal_Statistics.Designer.cs">
+      <DependentUpon>Personal_Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RankerList.Designer.cs">
+      <DependentUpon>RankerList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,9 @@
     <EmbeddedResource Include="InsertYourName1.resx">
       <DependentUpon>InsertYourName1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Personal_Statistics.resx">
+      <DependentUpon>Personal_Statistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -133,6 +148,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RankerList.resx">
+      <DependentUpon>RankerList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserResult.resx">
       <DependentUpon>UserResult.cs</DependentUpon>
     </EmbeddedResource>

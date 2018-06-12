@@ -23,7 +23,11 @@ namespace Extensometer_with_openCV
 
         public void ShowRank()
         {
-            string selectString = string.Format("SELECT * FROM user_score where idx=(select max(idx) from user_score);");
+            string selectString = string.Format("SELECT * FROM user_score);");
+            MySqlCommand cmd = new MySqlCommand(selectString, conn);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            Console.WriteLine("aaa");
+            rdr.Read();
         }
 
         public PersonData SelectOne()
