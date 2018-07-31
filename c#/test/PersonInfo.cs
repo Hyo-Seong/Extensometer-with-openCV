@@ -8,12 +8,17 @@ namespace Extensometer_with_openCV
 {
     class PersonInfo
     {
-        public int height;
-        public int shoulder_length;
-        public int shoulder_angle;
-        public int head;
-        public int score;
-        public string name;
+        public int Height { get; set; }
+        public int ShoulderLength { get; set; }
+        public int ShoulderAngle { get; set; }
+        public int Head { get; set; }
+        public int Score { get; set; }
+        public string Name;
+
+        public PersonInfo(int height, int shoulderLength, int shoulderAngle, int head, int score, string name)
+        {
+
+        }
         public void setPer()
         {
             System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv-data\result_data.txt");
