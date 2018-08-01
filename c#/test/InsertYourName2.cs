@@ -14,10 +14,6 @@ namespace test
 
         private MysqlConnection mysql = new MysqlConnection();
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
         }
@@ -40,6 +36,11 @@ namespace test
             this.Close();
             personal.Show();
             personal.Focus();
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
