@@ -1,14 +1,6 @@
 ﻿using Extensometer_with_openCV;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace test
@@ -19,15 +11,15 @@ namespace test
         {
             InitializeComponent();
         }
-        MysqlConnection mysql = new MysqlConnection();
+
+        private MysqlConnection mysql = new MysqlConnection();
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)

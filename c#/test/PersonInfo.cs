@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Extensometer_with_openCV
+﻿namespace Extensometer_with_openCV
 {
-    class PersonInfo
+    internal class PersonInfo
     {
         public int? Height { get; set; }
         public int? ShoulderLength { get; set; }
@@ -24,6 +18,7 @@ namespace Extensometer_with_openCV
             Score = score;
             Name = name;
         }
+
         public void SetPer()
         {
             System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv-data\result_data.txt");

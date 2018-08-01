@@ -1,29 +1,23 @@
 ﻿//주석 ctrl+k+c 풀때 ctrl+k+u
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using OpenCvSharp;
-using System.IO;
 using Extensometer_with_openCV;
+using OpenCvSharp;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace test
 {
     public partial class Form1 : Form
     {
-        const int frameWidth = 640;    // 화면 가로
-        const int frameHeight = 480;    // 화면 세로
+        private const int frameWidth = 640;    // 화면 가로
+        private const int frameHeight = 480;    // 화면 세로
 
-        VideoCapture capture;
-        Mat frame = new Mat();
-        MysqlConnection mysqlConnection = new MysqlConnection();
+        private VideoCapture capture;
+        private Mat frame = new Mat();
+        private MysqlConnection mysqlConnection = new MysqlConnection();
+
         public Form1()
         {
             mysqlConnection.Connection();
@@ -32,10 +26,10 @@ namespace test
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (capture != null && capture.IsOpened())  //카메라 오픈 후 
+            if (capture != null && capture.IsOpened())  //카메라 오픈 후
             {
                 capture.Read(frame);
-                
+
                 frame = findFace(frame);    //와꾸 찾기
 
                 frame = frame.Flip(FlipMode.Y);     //좌우 반전
@@ -44,11 +38,10 @@ namespace test
 
                 pictureBoxIpl1.ImageIpl = frame;
             }
-            else  //  카메라 오픈 전 
+            else  //  카메라 오픈 전
             {
-                
                 frame = new Mat(@"C:\opencv_data\logo.png");
-                
+
                 pictureBoxIpl1.ImageIpl = frame;
             }
         }
@@ -56,7 +49,6 @@ namespace test
         // 화면 켜기
         private void onpen_btn_Click(object sender, EventArgs e)
         {
-            
             //Thread.Sleep(3000);
             timer2.Start();
 
@@ -64,15 +56,13 @@ namespace test
             capture.FrameWidth = frameWidth;
             capture.FrameHeight = frameHeight;  //종료
             capture.Open(1);    //종료
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             timer2.Stop();
-
         }
+
         private Mat findFace(Mat srcMat)
         {
             using (CascadeClassifier detectFace = new CascadeClassifier(@"C:\opencv_data\haarcascade_frontalface_alt.xml"))
@@ -93,7 +83,7 @@ namespace test
                 // detect
                 Rect[] found;
                 found = detectFace.DetectMultiScale(result, scale_step, gr_thr);
-                
+
                 if (found.Length == 1)
                 {
                     output = srcMat.Clone();
@@ -121,8 +111,6 @@ namespace test
                         wr.WriteLine(x2);
                         wr.WriteLine(y2);
                     }
-  
-
                 }
 
                 output.Dispose();
@@ -137,7 +125,6 @@ namespace test
 
         private void pictureBoxIpl1_Click(object sender, EventArgs e)
         {
-
         }
 
         private Mat drawLine(Mat srcMat)
@@ -152,7 +139,6 @@ namespace test
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-
             if (capture != null)
             {
                 capture.Release();  //화면종료
@@ -166,7 +152,6 @@ namespace test
                 user.Owner = this;
                 user.ShowDialog();
             }
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -189,8 +174,6 @@ namespace test
             //RankerList rank = new RankerList();
             //rank.Owner = this ;
             //rank.ShowDialog();
-
         }
     }
 }
-

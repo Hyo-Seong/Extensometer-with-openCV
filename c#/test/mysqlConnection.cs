@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using MySql.Data.Common;
-using System.Threading;
+﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace Extensometer_with_openCV
 {
-    class MysqlConnection
+    internal class MysqlConnection
     {
-        MySqlConnection conn;
+        private MySqlConnection conn;
+
         public void Connection()
         {
             string strconn = "Server=localhost;Database=extensometer;Uid=root;Pwd=1234;SslMode=none;Character Set=utf8;";
@@ -27,7 +22,7 @@ namespace Extensometer_with_openCV
         public void SetData(string name)
         {
             Connection();
-            string selectString = string.Format("SELECT user_name FROM user where user_name=\"{0}\";",name);
+            string selectString = string.Format("SELECT user_name FROM user where user_name=\"{0}\";", name);
             MySqlCommand cmd = new MySqlCommand(selectString, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
             if (!rdr.Read())
@@ -42,15 +37,16 @@ namespace Extensometer_with_openCV
             System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv_data\result_data.txt");
             //키 등신 어깨 어깨기울기 점수
             //file.ReadLine();
-            selectString = string.Format("insert into user_score(user_name, height, head, shoulder_length, shoulder_angle, score) values('{0}',{1},{2},{3},{4},{5});", name,file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
+            selectString = string.Format("insert into user_score(user_name, height, head, shoulder_length, shoulder_angle, score) values('{0}',{1},{2},{3},{4},{5});", name, file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
             MySqlCommand cmd2 = new MySqlCommand(selectString, conn);
             cmd2.ExecuteNonQuery();
         }
 
-        internal void searchData(string text)
+        internal void SearchData(string text)
         {
             Connection();
         }
+
         //public PersonInfo SelectOne()
         //{
         //    string selectString = string.Format("SELECT * FROM user_score where idx=(select max(idx) from user_score);");
@@ -69,6 +65,4 @@ namespace Extensometer_with_openCV
         //    return per;
         //}
     }
-
-
 }
