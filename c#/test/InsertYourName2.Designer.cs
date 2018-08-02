@@ -97,7 +97,6 @@
             this.label2.Size = new System.Drawing.Size(258, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "이름을 입력해 주세요. ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // InsertYourName2
             // 

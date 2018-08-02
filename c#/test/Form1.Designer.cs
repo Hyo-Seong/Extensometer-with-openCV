@@ -49,10 +49,11 @@
             this.pictureBoxIpl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxIpl1.Location = new System.Drawing.Point(6, 54);
-            this.pictureBoxIpl1.MinimumSize = new System.Drawing.Size(240, 160);
+            this.pictureBoxIpl1.Location = new System.Drawing.Point(5, 43);
+            this.pictureBoxIpl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxIpl1.MinimumSize = new System.Drawing.Size(210, 128);
             this.pictureBoxIpl1.Name = "pictureBoxIpl1";
-            this.pictureBoxIpl1.Size = new System.Drawing.Size(804, 378);
+            this.pictureBoxIpl1.Size = new System.Drawing.Size(704, 302);
             this.pictureBoxIpl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIpl1.TabIndex = 0;
             this.pictureBoxIpl1.TabStop = false;
@@ -60,49 +61,53 @@
             // 
             // onpen_btn
             // 
-            this.onpen_btn.Location = new System.Drawing.Point(50, 10);
+            this.onpen_btn.Location = new System.Drawing.Point(44, 8);
+            this.onpen_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.onpen_btn.Name = "onpen_btn";
-            this.onpen_btn.Size = new System.Drawing.Size(107, 36);
+            this.onpen_btn.Size = new System.Drawing.Size(94, 29);
             this.onpen_btn.TabIndex = 1;
             this.onpen_btn.Text = "open";
             this.onpen_btn.UseVisualStyleBackColor = true;
-            this.onpen_btn.Click += new System.EventHandler(this.onpen_btn_Click);
+            this.onpen_btn.Click += new System.EventHandler(this.Open_btn_Click);
             // 
             // timer2
             // 
             this.timer2.Enabled = true;
             this.timer2.Interval = 6000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(328, 8);
+            this.button1.Location = new System.Drawing.Point(287, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 41);
+            this.button1.Size = new System.Drawing.Size(83, 33);
             this.button1.TabIndex = 2;
             this.button1.Text = "개인통계";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(585, 12);
+            this.button2.Location = new System.Drawing.Point(512, 10);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 32);
+            this.button2.Size = new System.Drawing.Size(92, 26);
             this.button2.TabIndex = 3;
             this.button2.Text = "랭킹";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 444);
+            this.ClientSize = new System.Drawing.Size(719, 355);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.onpen_btn);
             this.Controls.Add(this.pictureBoxIpl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

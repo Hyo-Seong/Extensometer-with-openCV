@@ -34,28 +34,23 @@ namespace test
 
                 frame = frame.Flip(FlipMode.Y);     //좌우 반전
 
-                frame = drawLine(frame);
+                frame = DrawLine(frame);
 
                 pictureBoxIpl1.ImageIpl = frame;
             }
             else  //  카메라 오픈 전
             {
-                frame = new Mat(@"C:\opencv_data\logo.png");
+                try
+                {
+                    frame = new Mat(@"C:\opencv_data\logo.png");
 
-                pictureBoxIpl1.ImageIpl = frame;
+                    pictureBoxIpl1.ImageIpl = frame;
+                } catch
+                {
+                    MessageBox.Show("파일이 존재하지 않음");
+                    pictureBoxIpl1.ImageIpl = null;
+                }
             }
-        }
-
-        // 화면 켜기
-        private void onpen_btn_Click(object sender, EventArgs e)
-        {
-            //Thread.Sleep(3000);
-            timer2.Start();
-
-            capture = VideoCapture.FromCamera(CaptureDevice.DShow, 0);
-            capture.FrameWidth = frameWidth;
-            capture.FrameHeight = frameHeight;  //종료
-            capture.Open(1);    //종료
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -127,7 +122,7 @@ namespace test
         {
         }
 
-        private Mat drawLine(Mat srcMat)
+        private Mat DrawLine(Mat srcMat)
         {
             Mat result = new Mat(srcMat.Size(), MatType.CV_8UC1, 3);
             srcMat.CopyTo(result);
@@ -137,7 +132,7 @@ namespace test
             return result;
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void Timer2_Tick(object sender, EventArgs e)
         {
             if (capture != null)
             {
@@ -154,7 +149,7 @@ namespace test
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             /*
             MysqlConnection mysqlConnection = new MysqlConnection();
@@ -166,7 +161,7 @@ namespace test
             in2.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             RankerList rank = new RankerList();
             rank.Owner = this;
@@ -174,6 +169,17 @@ namespace test
             //RankerList rank = new RankerList();
             //rank.Owner = this ;
             //rank.ShowDialog();
+        }
+
+        private void Open_btn_Click(object sender, EventArgs e)
+        {
+            //Thread.Sleep(3000);
+            timer2.Start();
+
+            capture = VideoCapture.FromCamera(CaptureDevice.DShow, 0);
+            capture.FrameWidth = frameWidth;
+            capture.FrameHeight = frameHeight;  //종료
+            capture.Open(1);    //종료
         }
     }
 }
