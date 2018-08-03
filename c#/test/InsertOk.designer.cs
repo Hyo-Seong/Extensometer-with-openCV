@@ -44,7 +44,6 @@
             this.label1.Size = new System.Drawing.Size(302, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "등록되었습니다.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -55,7 +54,6 @@
             this.label2.Size = new System.Drawing.Size(937, 108);
             this.label2.TabIndex = 1;
             this.label2.Text = "등록하신 사진과 결과를 확인하시려면 \'나의 기록\'에서\r\n확인해주세요.";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -68,7 +66,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "확인";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // InsertOk
             // 

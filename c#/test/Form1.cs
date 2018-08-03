@@ -45,7 +45,8 @@ namespace test
                     frame = new Mat(@"C:\opencv_data\logo.png");
 
                     pictureBoxIpl1.ImageIpl = frame;
-                } catch
+                }
+                catch
                 {
                     MessageBox.Show("파일이 존재하지 않음");
                     pictureBoxIpl1.ImageIpl = null;
