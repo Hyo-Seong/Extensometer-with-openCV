@@ -152,24 +152,12 @@ namespace test
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            /*
-            MysqlConnection mysqlConnection = new MysqlConnection();
-            mysqlConnection.Connection();
-            mysqlConnection.SelectOne();
-            */
-            InsertYourName2 in2 = new InsertYourName2();
-            in2.Owner = this;
-            in2.ShowDialog();
+            new InsertYourName2().ShowDialog();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            RankerList rank = new RankerList();
-            rank.Owner = this;
-            rank.ShowDialog();
-            //RankerList rank = new RankerList();
-            //rank.Owner = this ;
-            //rank.ShowDialog();
+            new RankerList().ShowDialog();
         }
 
         private void Open_btn_Click(object sender, EventArgs e)
