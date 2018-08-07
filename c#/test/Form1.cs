@@ -26,11 +26,11 @@ namespace test
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (capture != null && capture.IsOpened())  //카메라 오픈 후
+            if (capture != null && capture.IsOpened())  //카메라가 오픈되었으면
             {
                 capture.Read(frame);
 
-                frame = findFace(frame);    //와꾸 찾기
+                frame = findFace(frame);    //얼굴 찾기
 
                 frame = frame.Flip(FlipMode.Y);     //좌우 반전
 
@@ -42,13 +42,13 @@ namespace test
             {
                 try
                 {
-                    frame = new Mat(@"C:\opencv_data\logo.png");
+                    frame = new Mat(@"C:\opencv_data\logo.png"); //경로설정 다 해야할듯,,
 
                     pictureBoxIpl1.ImageIpl = frame;
                 }
                 catch
                 {
-                    MessageBox.Show("파일이 존재하지 않음");
+                    MessageBox.Show("파일이 존재하지 않습니다.");
                     pictureBoxIpl1.ImageIpl = null;
                 }
             }
