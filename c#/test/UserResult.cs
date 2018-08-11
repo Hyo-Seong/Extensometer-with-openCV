@@ -25,48 +25,51 @@ namespace Extensometer_with_openCV
             label8.Text = file.ReadLine();
             label6.Text = file.ReadLine();
             label12.Text = file.ReadLine();
-            pictureBox2.Focus();
+            ResultPictureBox.Focus();
             pictureBox1.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\result.jpg");
             string label = label4.Text;
             Console.WriteLine(label);
             if (label == "1")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\1.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\1.png");
             }
             else if (label == "2")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\2.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\2.png");
             }
             else if (label == "3")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\3.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\3.png");
             }
             else if (label == "4")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\4.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\4.png");
             }
             else if (label == "5")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\5.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\5.png");
             }
             else if (label == "6")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\6.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\6.png");
             }
             else if (label == "7")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\7.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\7.png");
             }
             else if (label == "8")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\8.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\8.png");
             }
             else if (label == "9")
             {
-                pictureBox2.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\9.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\9.png");
             }
-            pictureBox2.Show();
-            pictureBox2.Focus();
+            ResultPictureBox.Height = ResultPictureBox.Image.Height;
+            ResultPictureBox.Width = ResultPictureBox.Image.Width;
+
+            ResultPictureBox.Show();
+            ResultPictureBox.Focus();
         }
 
 
@@ -104,7 +107,7 @@ namespace Extensometer_with_openCV
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pictureBox2.Hide();
+            ResultPictureBox.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

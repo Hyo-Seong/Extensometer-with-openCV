@@ -73,12 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="char.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="char.Designer.cs">
-      <DependentUpon>char.cs</DependentUpon>
-    </Compile>
     <Compile Include="DeleteOk.cs">
       <SubType>Form</SubType>
     </Compile>
