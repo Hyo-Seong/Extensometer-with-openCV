@@ -21,7 +21,7 @@
 
         public void SetPer()
         {
-            System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv-data\result_data.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(System.Windows.Forms.Application.StartupPath + "\\opencv-data\\result_data.txt");
             //키 등신 어깨 어깨기울기 점수
             string a = file.ReadLine();
         }

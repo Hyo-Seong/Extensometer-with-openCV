@@ -23,7 +23,7 @@ namespace test
         {
             InitializeComponent();
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv_data\name.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\name.txt");
             //키 등신 어깨 어깨기울기 점수
             name = file.ReadLine();
             MySqlConnection conn;

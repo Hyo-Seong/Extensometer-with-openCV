@@ -34,7 +34,7 @@ namespace Extensometer_with_openCV
                 cmd.ExecuteNonQuery();
             }
             rdr.Close();
-            System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv_data\result_data.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\result_data.txt");
             //키 등신 어깨 어깨기울기 점수
             //file.ReadLine();
             selectString = string.Format("insert into user_score(user_name, height, head, shoulder_length, shoulder_angle, score) values('{0}',{1},{2},{3},{4},{5});", name, file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine(), file.ReadLine());
@@ -46,23 +46,5 @@ namespace Extensometer_with_openCV
         {
             Connection();
         }
-
-        //public PersonInfo SelectOne()
-        //{
-        //    string selectString = string.Format("SELECT * FROM user_score where idx=(select max(idx) from user_score);");
-        //    MySqlCommand cmd = new MySqlCommand(selectString, conn);
-        //    MySqlDataReader rdr = cmd.ExecuteReader();
-
-        //    rdr.Read();
-        //    PersonInfo per = new PersonInfo();
-        //    per.height = (float)rdr["height"];
-        //    per.shoulder_length = (float)rdr["shoulder_length"];
-        //    per.shoulder_angle = (float)rdr["shoulder_angle"];
-        //    per.head = (float)rdr["head"];
-        //    per.score = (int)rdr["score"];
-        //    Console.WriteLine(per.score);
-        //    rdr.Close();
-        //    return per;
-        //}
     }
 }

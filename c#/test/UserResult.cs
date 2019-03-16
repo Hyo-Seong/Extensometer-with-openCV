@@ -18,7 +18,7 @@ namespace Extensometer_with_openCV
 
             sql.Connection();
             InitializeComponent();
-            System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv_data\result_data.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\result_data.txt");
             //키 등신 어깨 어깨기울기 점수
             label1.Text = file.ReadLine();
             label4.Text = file.ReadLine();
@@ -26,44 +26,44 @@ namespace Extensometer_with_openCV
             label6.Text = file.ReadLine();
             label12.Text = file.ReadLine();
             ResultPictureBox.Focus();
-            pictureBox1.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\result.jpg");
+            pictureBox1.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\result.jpg");
             string label = label4.Text;
             Console.WriteLine(label);
             if (label == "1")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\1.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\1.png");
             }
             else if (label == "2")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\2.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\2.png");
             }
             else if (label == "3")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\3.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\3.png");
             }
             else if (label == "4")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\4.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\4.png");
             }
             else if (label == "5")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\5.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\5.png");
             }
             else if (label == "6")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\6.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\6.png");
             }
             else if (label == "7")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\7.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\7.png");
             }
             else if (label == "8")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\8.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\8.png");
             }
             else if (label == "9")
             {
-                ResultPictureBox.Image = System.Drawing.Image.FromFile(@"C:\opencv_data\9.png");
+                ResultPictureBox.Image = System.Drawing.Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\9.png");
             }
             ResultPictureBox.Height = ResultPictureBox.Image.Height;
             ResultPictureBox.Width = ResultPictureBox.Image.Width;

@@ -21,10 +21,11 @@ namespace test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.IO.StreamReader file = new System.IO.StreamReader(@"c:\opencv_data\result_data.txt");
+			//TODO: hyoeong - 여기 오류 (개인점수 확인)
+            System.IO.StreamReader file = new System.IO.StreamReader(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\result_data.txt");
             //키 등신 어깨 어깨기울기 점수
             string a = file.ReadLine();
-            using (StreamWriter wr = new StreamWriter(@"C:\opencv_data\name.txt"))
+            using (StreamWriter wr = new StreamWriter(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\name.txt"))
             {
                 wr.WriteLine(textBox1.Text);
             }

@@ -42,9 +42,11 @@ namespace test
             {
                 try
                 {
-                    frame = new Mat(@"C:\opencv_data\logo.png"); //경로설정 다 해야할듯,,
+					Console.WriteLine();
 
-                    pictureBoxIpl1.ImageIpl = frame;
+				frame = new Mat(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\resource\\main_image.png"); //경로설정 다 해야할듯,,
+
+					pictureBoxIpl1.ImageIpl = frame;
                 }
                 catch
                 {
@@ -61,7 +63,7 @@ namespace test
 
         private Mat findFace(Mat srcMat)
         {
-            using (CascadeClassifier detectFace = new CascadeClassifier(@"C:\opencv_data\haarcascade_frontalface_alt.xml"))
+            using (CascadeClassifier detectFace = new CascadeClassifier(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\resource\\opencv_data\\haarcascade_frontalface_alt.xml"))
             {
                 Mat result = new Mat();
                 Mat output = new Mat();
@@ -86,7 +88,7 @@ namespace test
 
                     srcMat.Rectangle(found[0], Scalar.Red, 5);
 
-                    OpenCvSharp.Cv2.ImWrite(@"C:\opencv_data\test.jpg", output);    //jpg파일 저장
+                    OpenCvSharp.Cv2.ImWrite(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\test.jpg", output);    //jpg파일 저장
 
                     x1 = found[0].X;
                     y1 = found[0].Y;
@@ -100,7 +102,7 @@ namespace test
                     json.Add("y2", y2);
                     */
                     //Console.WriteLine(json.ToString());
-                    using (StreamWriter wr = new StreamWriter(@"C:\opencv_data\data.txt"))
+                    using (StreamWriter wr = new StreamWriter(System.Windows.Forms.Application.StartupPath + "\\opencv_data\\data.txt"))
                     {
                         wr.WriteLine(x1);
                         wr.WriteLine(y1);
@@ -140,7 +142,7 @@ namespace test
                 capture.Release();  //화면종료
                 pictureBoxIpl1.Image = null;    //화면종료
                 Thread.Sleep(500);
-                string strappname = @"C:\opencv_data\cpp_opencv\OpenCV_Test.exe";
+                string strappname = System.Windows.Forms.Application.StartupPath + "\\opencv_data\\cpp_opencv\\OpenCV_Test.exe";
                 Process pro = Process.Start(strappname);
                 Thread.Sleep(1000);
                 timer2.Stop();
